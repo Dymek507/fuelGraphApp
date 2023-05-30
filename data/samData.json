@@ -1,0 +1,146 @@
+[
+  {
+    "date": "02/08/2023",
+    "mileage": "200580",
+    "place": "W",
+    "fuel": "350",
+    "full": "Nie",
+    "driver": "John"
+  },
+  {
+    "date": "02/10/2023",
+    "mileage": "201181",
+    "place": "K",
+    "fuel": "549",
+    "full": "Full",
+    "driver": "John"
+  },
+  {
+    "date": "02/17/2023",
+    "mileage": "202931",
+    "place": "W",
+    "fuel": "662",
+    "full": "Nie",
+    "driver": "John"
+  },
+  {
+    "date": "02/27/2023",
+    "mileage": "204794",
+    "place": "W",
+    "fuel": "635",
+    "full": "Full",
+    "driver": "John"
+  },
+  {
+    "date": "03/01/2023",
+    "mileage": "205753",
+    "place": "W",
+    "fuel": "347",
+    "full": "Full",
+    "driver": "John"
+  },
+  {
+    "date": "03/07/2023",
+    "mileage": "207593",
+    "place": "W",
+    "fuel": "651",
+    "full": "Full",
+    "driver": "John"
+  },
+  {
+    "date": "03/13/2023",
+    "mileage": "208653",
+    "place": "W",
+    "fuel": "200",
+    "full": "Nie",
+    "driver": "John"
+  },
+  {
+    "date": "03/15/2023",
+    "mileage": "209465",
+    "place": "W",
+    "fuel": "535",
+    "full": "Full",
+    "driver": "John"
+  },
+  {
+    "date": "03/21/2023",
+    "mileage": "",
+    "place": "",
+    "fuel": "140",
+    "full": "Nie",
+    "driver": "John"
+  },
+  {
+    "date": "03/23/2023",
+    "mileage": "211942",
+    "place": "W",
+    "fuel": "687",
+    "full": "Full",
+    "driver": "John"
+  },
+  {
+    "date": "03/28/2023",
+    "mileage": "",
+    "place": "",
+    "fuel": "150",
+    "full": "Nie",
+    "driver": "John"
+  },
+  {
+    "date": "03/30/2023",
+    "mileage": "213994",
+    "place": "W",
+    "fuel": "598",
+    "full": "Full",
+    "driver": "John"
+  },
+  {
+    "date": "04/05/2023",
+    "mileage": "215734",
+    "place": "W",
+    "fuel": "300",
+    "full": "Nie",
+    "driver": "John"
+  },
+  {
+    "date": "04/11/2023",
+    "mileage": "216363",
+    "place": "W",
+    "fuel": "350",
+    "full": "Nie",
+    "driver": "John"
+  },
+  {
+    "date": "04/12/2023",
+    "mileage": "217280",
+    "place": "W",
+    "fuel": "527",
+    "full": "Full",
+    "driver": "John"
+  },
+  {
+    "date": "04/18/2023",
+    "mileage": "218527",
+    "place": "W",
+    "fuel": "472",
+    "full": "Full",
+    "driver": "John"
+  },
+  {
+    "date": "04/25/2023",
+    "mileage": "219979",
+    "place": "W",
+    "fuel": "400",
+    "full": "Nie",
+    "driver": "John"
+  },
+  {
+    "date": "04/27/2023",
+    "mileage": "221311",
+    "place": "W",
+    "fuel": "602",
+    "full": "Full",
+    "driver": "John"
+  }
+]

@@ -3,7 +3,11 @@ import Image from "next/image";
 import React from "react";
 import { RxSketchLogo, RxDashboard, RxPerson } from "react-icons/rx";
 
-const Sidebar = ({ children }) => {
+type SidebarProps = {
+  children: React.ReactNode;
+};
+
+const Sidebar = ({ children }: SidebarProps) => {
   return (
     <div className="flex">
       <div className="fixed w-20 h-screen p-4 bg-white border-r-[1px] flex-center flex-col">
