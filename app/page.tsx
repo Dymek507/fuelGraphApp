@@ -2,7 +2,7 @@ import TopCards from '@/components/TopCards'
 import Header from '../components/Header'
 import Sidebar from '../components/Sidebar'
 import RecentOrders from '@/components/RecentOrders'
-import { BarChartTest } from '@/components/BarChartTest'
+import { BarChartTest } from '@/components/BarChart/BarChartTest'
 
 export default function Home() {
   return (
