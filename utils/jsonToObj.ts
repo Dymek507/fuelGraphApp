@@ -1,19 +1,25 @@
 import { AllData, AllRawData, DayData, RawDataDay } from "@/types/global";
-import ALL_DATA from "@/data/fuel-excel.json" assert { type: "json" };
 
 //convert date string to date object
-const dateStingToDate = (dateString: string, time: string = "00:00") => {
+const dateStingToDate = (dateString: string, time: string) => {
   const [month, day, year] = dateString.split("/");
-  const [hour, minute] = time.split(":");
-  return new Date(
-    Date.UTC(
-      Number("20" + year),
-      Number(month) - 1,
-      Number(day),
-      Number(hour),
-      Number(minute)
-    )
-  ).toLocaleString();
+
+  if (time !== undefined) {
+    const [hour, minute] = time.split(":");
+    return new Date(
+      Date.UTC(
+        Number("20" + year),
+        Number(month) - 1,
+        Number(day),
+        Number(hour),
+        Number(minute)
+      )
+    );
+  } else {
+    return new Date(
+      Date.UTC(Number("20" + year), Number(month) - 1, Number(day))
+    );
+  }
 };
 
 //Convert place string to place name

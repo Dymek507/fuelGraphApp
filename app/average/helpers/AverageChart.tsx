@@ -11,7 +11,7 @@ import {
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 import getChartData from './getChartData';
-import ALL_DATA from '../../../data/fuel-excel.json';
+import { ALL_DATA } from '@/data/allData';
 import { useAppSelector } from '@/app/store/features/hooks';
 
 ChartJS.register(
@@ -43,9 +43,9 @@ export function AverageChart() {
 
   const plates = useAppSelector((state) => state.vehicle.plates);
 
-  const chartData = getChartData(ALL_DATA[plates as keyof typeof ALL_DATA])
+  const chartData = getChartData(ALL_DATA[plates])
 
-  const labels = chartData.map((e) => `${e.date.getDate()} ${months[e.date.getMonth()]}`);
+  const labels = chartData.map((e) => `${e.date.getDay()} ${months[e.date.getMonth()]}`);
 
 
   const data = {

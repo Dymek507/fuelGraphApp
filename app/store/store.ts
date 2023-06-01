@@ -7,7 +7,6 @@ import allDataReducer from "./features/all-data/allDataSlice";
 export const store = configureStore({
   reducer: {
     vehicle: vehicleReducer,
-    alldata: allDataReducer,
   },
 });
 

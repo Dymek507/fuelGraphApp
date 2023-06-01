@@ -1,5 +1,4 @@
 import { DayData } from "@/types/global";
-import jsonToObj from "@/utils/jsonToObj";
 
 //Divide array into subarrays
 const arrayDivider = (data: DayData[]): DayData[][] => {
@@ -62,9 +61,9 @@ const arrayWithAvg = (arrayOfArrays: DayData[][]) => {
   return dataWithAvg;
 };
 
-const getChartData = (data: any[]) => {
-  const convertedData = jsonToObj(data);
-  const dividedArrays = arrayDivider(convertedData);
+const getChartData = (data: DayData[]) => {
+  if (data === undefined) return [];
+  const dividedArrays = arrayDivider(data);
   const completeData = arrayWithAvg(dividedArrays);
   return completeData;
 };

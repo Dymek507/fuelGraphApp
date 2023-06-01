@@ -1,5 +1,5 @@
 export type DayData = {
-  date: string;
+  date: Date;
   mileage: number;
   place: string;
   fueled: number;

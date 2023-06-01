@@ -10,7 +10,7 @@ const arrayDivider = (data: DayData[]): DayData[][] => {
 
   for (let i = 0; i < data.length; i++) {
     currentArray.push(data[i]);
-    if (data[i].date.getMonth() !== data[i + 1]?.date.getMonth()) {
+    if (data[i]?.date.getMonth() !== data[i + 1]?.date.getMonth()) {
       dividedArrays.push(currentArray);
       currentArray = [];
     }
@@ -55,9 +55,9 @@ const calculateTotalEach = (data: DayData[][]) => {
   return arrayOfMonthsConsumption;
 };
 
-const getChartData = (data: any[]) => {
-  const convertedData = jsonToObj(data);
-  const dividedArrays = arrayDivider(convertedData);
+const getChartData = (data: DayData[]) => {
+  if (data === undefined) return [];
+  const dividedArrays = arrayDivider(data);
   const completeData = calculateTotalEach(dividedArrays);
   return completeData;
 };

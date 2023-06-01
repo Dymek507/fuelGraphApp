@@ -17,10 +17,6 @@ const Option = ({ text }: OptionProps) => {
 }
 const Header = () => {
   const dispatch = useAppDispatch();
-  useEffect(() => {
-    dispatch(fetchData())
-  }
-    , [dispatch]);
 
   const changePlateHandler = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const platesAvaiable = Object.keys(ALL_DATA).filter(plates => plates === e.target.value).length > 0

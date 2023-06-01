@@ -11,7 +11,7 @@ import {
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 import getChartData from './getChartData';
-import ALL_DATA from '../../../data/fuel-excel.json';
+import { ALL_DATA } from '@/data/allData'
 import { useAppSelector } from '@/app/store/features/hooks';
 
 ChartJS.register(
@@ -22,7 +22,6 @@ ChartJS.register(
   Tooltip,
   Legend
 );
-
 
 const options = {
   responsive: true,
