@@ -1,51 +1,5 @@
 import { DayData } from "@/types/global";
-import React from "react";
-
-//convert date string to date object
-const dateStingToDate = (dateString: string) => {
-  const [month, day, year] = dateString.split("/");
-  return new Date(Number(year), Number(month), Number(day));
-};
-
-//Convert place string to place name
-const placeConverter = (place: string) => {
-  switch (place) {
-    case "K":
-      return "Krasnystaw";
-    case "W":
-      return "Wólka";
-    default:
-      return "Unknown";
-  }
-};
-
-//Convert full string to boolean
-const checkIfFull = (full: string) => {
-  switch (full) {
-    case "Full":
-      return true;
-    case "Tak":
-      return true;
-    case "Nie":
-      return false;
-    default:
-      return false;
-  }
-};
-
-//Convert data to proper format
-const dataConverter = (rawData: any[]) => {
-  return rawData.map((item) => {
-    return {
-      date: dateStingToDate(item.date),
-      mileage: Number(item.mileage),
-      place: placeConverter(item.place),
-      fuel: Number(item.fuel),
-      full: checkIfFull(item.full),
-      driver: item.driver,
-    };
-  });
-};
+import jsonToObj from "@/utils/jsonToObj";
 
 //Divide array into subarrays
 const arrayDivider = (data: DayData[]): DayData[][] => {
@@ -72,7 +26,7 @@ const calculateAvg = (subArray: DayData[]) => {
   let totalFuel = 0;
 
   for (let i = 1; i < subArray.length; i++) {
-    totalFuel += subArray[i].fuel;
+    totalFuel += subArray[i].fueled;
   }
 
   const totalMileage =
@@ -109,7 +63,7 @@ const arrayWithAvg = (arrayOfArrays: DayData[][]) => {
 };
 
 const getChartData = (data: any[]) => {
-  const convertedData = dataConverter(data);
+  const convertedData = jsonToObj(data);
   const dividedArrays = arrayDivider(convertedData);
   const completeData = arrayWithAvg(dividedArrays);
   return completeData;

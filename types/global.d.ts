@@ -1,8 +1,21 @@
 export type DayData = {
-  date: Date;
+  date: string;
   mileage: number;
   place: string;
-  fuel: number;
+  fueled: number;
   full: boolean;
   driver: string;
 };
+
+export type RawDataDay = {
+  date: string;
+  time: any;
+  mileage: any;
+  location: string;
+  fueled: any;
+  full: string;
+  driver: any;
+};
+
+export type AllData = { [key: string]: DayData[] };
+export type AllRawData = { [key: string]: RawDataDay[] };
