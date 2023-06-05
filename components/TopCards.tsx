@@ -1,7 +1,8 @@
 'use client'
 import { useAppSelector } from '@/app/store/features/hooks'
 import React from 'react'
-import { ALL_DATA } from '@/data/allData'
+import ALL_VEHICLES_DATA from '@/data/fuel-data.json';
+import { AllVehiclesData } from '@/types/global';
 
 type DriversObj = {
   [key: string]: number
@@ -9,14 +10,15 @@ type DriversObj = {
 
 const TopCards = () => {
   const plates = useAppSelector(state => state.vehicle.plates)
-  const vehicleArray = ALL_DATA[plates]
+  const allVehiclesData = ALL_VEHICLES_DATA as AllVehiclesData
+  const vehicleArray = allVehiclesData[plates]
   const driversObj: DriversObj = {}
   const drivers = vehicleArray.map((item) => {
     return item.driver
   })
   const uniq = [...new Set(drivers)]
   drivers.forEach(item => {
-    if (uniq.includes(item)) {
+    if (item && uniq.includes(item)) {
       if (driversObj[item]) {
         driversObj[item]++;
       } else {
@@ -29,7 +31,11 @@ const TopCards = () => {
 
   //Calculate the total amount of fuel consumed and total amount km driven
   const totalFuel = Number(vehicleArray.reduce((acc, item) => {
-    return acc + item.fueled
+    if (item.fueled) {
+      return acc + item.fueled
+    } else {
+      return acc
+    }
   }, 0).toFixed(0))
   const totalKm = vehicleArray[vehicleArray.length - 1].mileage - vehicleArray[0].mileage
 

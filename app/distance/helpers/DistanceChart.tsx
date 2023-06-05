@@ -11,8 +11,9 @@ import {
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 import getChartData from './getChartData';
-import { ALL_DATA } from '@/data/allData'
+import ALL_VEHICLES_DATA from '@/data/fuel-data.json';
 import { useAppSelector } from '@/app/store/features/hooks';
+import { AllVehiclesData, VehicleObj } from '@/types/global';
 
 ChartJS.register(
   CategoryScale,
@@ -44,7 +45,9 @@ export function DistanceChart() {
 
   const plates = useAppSelector((state) => state.vehicle.plates);
 
-  const chartData = getChartData(ALL_DATA[plates as keyof typeof ALL_DATA])
+  const allVehiclesData = ALL_VEHICLES_DATA as AllVehiclesData
+
+  const chartData = getChartData(allVehiclesData[plates])
 
   const labels = chartData.map((e) => months[e.month]);
 

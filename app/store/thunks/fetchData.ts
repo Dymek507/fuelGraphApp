@@ -6,7 +6,7 @@ import { RootState } from "../store";
 import { AnyAction } from "@reduxjs/toolkit";
 import ALL_DATA from "@/data/fuel-excel.json" assert { type: "json" };
 import { setData } from "../features/all-data/allDataSlice";
-import jsonToObj from "@/utils/jsonToObj";
+import jsonToObj from "@/data/excelData.ts/helpers/jsonToObj";
 import { AllRawData } from "@/types/global";
 
 export const fetchData = (): ThunkAction<

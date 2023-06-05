@@ -11,8 +11,10 @@ import {
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 import getChartData from './getChartData';
-import { ALL_DATA } from '@/data/allData';
 import { useAppSelector } from '@/app/store/features/hooks';
+import ALL_VEHICLES_DATA from '@/data/fuel-data.json';
+import type { AllVehiclesData, VehicleObj } from '@/types/global';
+import { ALL } from 'dns';
 
 ChartJS.register(
   CategoryScale,
@@ -31,7 +33,7 @@ const options = {
     },
     title: {
       display: true,
-      text: 'Paliwo/Przejechane kilometry',
+      text: 'Średnie spalanie',
     },
   },
 };
@@ -39,14 +41,21 @@ const options = {
 // array of months in polish
 const months = ['Sty', 'Lut', 'Mar', 'Kwi', 'Maj', 'Cze', 'Lip', 'Sie', 'Wrz', 'Paz', 'Lis', 'Gru']
 
+const dateStringToDay = (date: string) => {
+  const dateObj = new Date(date)
+  const day = dateObj.getDate()
+  const month = dateObj.getMonth()
+  return `${day} ${months[month]}`
+}
+
 export function AverageChart() {
 
   const plates = useAppSelector((state) => state.vehicle.plates);
+  const allVehiclesData = ALL_VEHICLES_DATA as AllVehiclesData
 
-  const chartData = getChartData(ALL_DATA[plates])
+  const chartData = getChartData(allVehiclesData[plates])
 
-  const labels = chartData.map((e) => `${e.date.getDay()} ${months[e.date.getMonth()]}`);
-
+  const labels = chartData.map((e) => dateStringToDay(e.date));
 
   const data = {
     labels: labels,

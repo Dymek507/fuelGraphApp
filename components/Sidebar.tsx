@@ -3,11 +3,9 @@ import Image from "next/image";
 import React from "react";
 import { RxSketchLogo, RxDashboard, RxPerson } from "react-icons/rx";
 
-type SidebarProps = {
-  children: React.ReactNode;
-};
 
-const Sidebar = ({ children }: SidebarProps) => {
+// const Sidebar = ({ children }: SidebarProps) => {
+const Sidebar = () => {
   return (
     <div className="flex">
       <div className="fixed w-20 h-screen p-4 bg-white border-r-[1px] flex-center flex-col">
@@ -43,7 +41,6 @@ const Sidebar = ({ children }: SidebarProps) => {
           </Link>
         </div>
       </div>
-      <main className="w-full ml-20">{children}</main>
     </div>
   );
 };

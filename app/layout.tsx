@@ -4,8 +4,6 @@ import { Inter } from 'next/font/google'
 import Header from '@/components/Header'
 import TopCards from '@/components/TopCards'
 import { Providers } from './store/provider'
-import jsonToObj from '@/utils/jsonToObj'
-import ALL_DATA from '@/data/fuel-excel.json'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -26,13 +24,15 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Providers>
-          <Sidebar>
-            <main className="min-h-screen bg-gray-100">
+          <main >
+            <div className='w-20'>
+              <Sidebar />
+            </div>
+            <div className="w-[100%-5rem] ml-20 px-8 min-h-screen bg-gray-100">
               <Header />
-              <TopCards />
               {children}
-            </main>
-          </Sidebar>
+            </div>
+          </main>
         </Providers>
       </body>
     </html>
