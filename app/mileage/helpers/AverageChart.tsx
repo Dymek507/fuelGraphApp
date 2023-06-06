@@ -32,14 +32,6 @@ ChartJS.register(
   Filler,
   Legend
 );
-// ChartJS.register(
-//   CategoryScale,
-//   LinearScale,
-//   BarElement,
-//   Title,
-//   Tooltip,
-//   Legend
-// );
 
 const options = {
   responsive: true,
@@ -81,7 +73,7 @@ export function AverageChart() {
       {
         fill: true,
         label: 'Średnie spalanie',
-        data: labels.map((e, id) => chartData[id].avg),
+        data: labels.map((e, id) => allVehiclesData[plates][id].fuelingMileage),
         borderColor: 'rgb(73, 112, 235)',
         backgroundColor: 'rgba(73, 11, 235, 0.5)',
       },

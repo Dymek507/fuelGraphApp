@@ -71,5 +71,9 @@ export function DistanceChart() {
     ],
   };
 
-  return <Bar options={options} data={data} />;
+  return (
+    <div className=' w-[90%]'>
+      <Bar options={options} data={data} />;
+    </div>
+  )
 }

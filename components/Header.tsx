@@ -26,7 +26,7 @@ const Header = () => {
   }
 
   return (
-    <div className="flex justify-between px-4 pt-4">
+    <div className="flex justify-between px-4 py-4">
       <h2>FuelGraph</h2>
       <select onChange={e => changePlateHandler(e)} className="w-full max-w-xs font-sans select select-bordered">
         {optionsList.map((e) => <Option key={e} text={e} />)}

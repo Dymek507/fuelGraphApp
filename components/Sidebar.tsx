@@ -16,25 +16,31 @@ const Sidebar = () => {
             </div>
           </Link>
           <span className="border-b-[1px] border-gray-400 w-full p-2"></span>
-          <Link href="/distance">
+          <Link href="/average">
             <div className="inline-block p-3 my-4 text-white bg-gray-400 rounded-lg cursor-pointer hover:bg-gray-800">
               <RxDashboard />
             </div>
           </Link>
           <span className="border-b-[1px] border-gray-400 w-full p-2"></span>
-          <Link href="/average">
+          <Link href="/distance-fuel">
             <div className="inline-block p-3 my-4 text-white bg-gray-400 rounded-lg cursor-pointer hover:bg-gray-800">
               <RxPerson />
             </div>
           </Link>
           <span className="border-b-[1px] border-gray-400 w-full p-2"></span>
-          <Link href="/costumers">
+          <Link href="/daily-fuel">
             <div className="inline-block p-3 my-4 text-white bg-gray-400 rounded-lg cursor-pointer hover:bg-gray-800">
               <RxDashboard />
             </div>
           </Link>
           <span className="border-b-[1px] border-gray-400 w-full p-2"></span>
-          <Link href="/orders">
+          <Link href="/list">
+            <div className="inline-block p-3 my-4 text-white bg-gray-400 rounded-lg cursor-pointer hover:bg-gray-800">
+              <RxDashboard />
+            </div>
+          </Link>
+          <span className="border-b-[1px] border-gray-400 w-full p-2"></span>
+          <Link href="/mileage">
             <div className="inline-block p-3 my-4 text-white bg-gray-400 rounded-lg cursor-pointer hover:bg-gray-800">
               <RxDashboard />
             </div>

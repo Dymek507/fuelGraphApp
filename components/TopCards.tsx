@@ -58,13 +58,6 @@ const TopCards = () => {
           <p className='text-2xl font-bold'>{totalKm}<span className='ml-2 text-sm'>km</span></p>
         </div>
       </div>
-
-      <div className='flex justify-between w-full p-4 bg-white border rounded-lg '>
-        <div className='flex flex-col w-full pb-4'>
-          <p>$5.463</p>
-        </div>
-      </div>
-
     </div >
   )
 }

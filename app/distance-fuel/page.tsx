@@ -4,8 +4,7 @@ import TopCards from "@/components/TopCards";
 
 
 const page = () => {
-  return <div className="w-full">
-    <TopCards />
+  return <div className="flex-center">
     <DistanceChart />
   </div>;
 };
