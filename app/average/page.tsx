@@ -1,14 +1,15 @@
 import React from "react";
-import { AverageChart } from "./helpers/AverageChart";
 import TopCards from "@/components/TopCards";
+import { VehicleAvgFuel } from "./helpers/VehicleAvgFuel";
 
 
-const page = () => {
+const Home = () => {
   return (
-    <div className="flex-center">
-      <AverageChart />
+    <div className="flex-center flex-col h-[500px]">
+      <TopCards />
+      <VehicleAvgFuel />
     </div>
   )
 };
 
-export default page;
+export default Home;

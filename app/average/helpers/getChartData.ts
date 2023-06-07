@@ -76,11 +76,40 @@ const arrayWithAvg = (arrayOfArrays: VehicleObj[][]) => {
   return dataWithAvg;
 };
 
+// array of months in polish
+const months = [
+  "Sty",
+  "Lut",
+  "Mar",
+  "Kwi",
+  "Maj",
+  "Cze",
+  "Lip",
+  "Sie",
+  "Wrz",
+  "Paz",
+  "Lis",
+  "Gru",
+];
+
+//Change date format
+const dateStringToDay = (date: string) => {
+  const dateObj = new Date(date);
+  const day = dateObj.getDate();
+  const month = dateObj.getMonth();
+  return `${day} ${months[month]}`;
+};
+
 const getChartData = (data: VehicleObj[]) => {
   if (data === undefined) return [];
   const dividedArrays = arrayDivider(data);
   const completeData = arrayWithAvg(dividedArrays);
-  return completeData;
+  return completeData.map((day) => {
+    return {
+      ...day,
+      date: dateStringToDay(day.date),
+    };
+  });
 };
 
 export default getChartData;
