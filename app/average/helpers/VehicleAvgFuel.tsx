@@ -6,9 +6,6 @@ import { useAppSelector } from '@/app/store/features/hooks';
 import ALL_VEHICLES_DATA from '@/data/fuel-data.json';
 import { AllVehiclesData } from '@/types/global';
 
-
-
-
 export function VehicleAvgFuel() {
 
   const plates = useAppSelector((state) => state.vehicle.plates);
