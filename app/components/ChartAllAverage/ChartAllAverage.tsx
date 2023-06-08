@@ -36,7 +36,7 @@ export function ChartAllAverage() {
         <XAxis dataKey="name" />
         <YAxis />
         <Tooltip />
-        <Legend />
+        {/*<Legend /> */}
         <Bar dataKey="totalFuelUsed" fill="#8884d8" />
         <Bar dataKey="totalFueled" fill="red" />
         <Bar dataKey="totalTraveled" fill="#82ca9d" />

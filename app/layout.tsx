@@ -24,17 +24,14 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Providers>
-          <main className='bg-gray-200 w-full grid grid-cols-[5rem_1fr] grid-rows-[5rem_1fr_1fr]'>
-            <div className='col-span-1 row-span-3'>
+          <main className='bg-gray-200 w-full h-screen grid grid-cols-[5rem_1fr] grid-rows-[5rem_1fr_1fr]'>
+            <div className='col-span-1 row-span-3 '>
               <Sidebar />
             </div>
-            <div className='col-span-1 row-span-1 '>
+            <div className='col-span-1 row-span-1'>
               <Header />
             </div>
-            {/* <div className='col-span-1 row-span-1 '>
-              <TopCards />
-            </div> */}
-            <div className='col-span-1 row-span-1 '>
+            <div className='col-span-1 row-span-2 wh-full'>
               {children}
             </div>
           </main>

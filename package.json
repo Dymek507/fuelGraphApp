@@ -23,6 +23,7 @@
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.4",
     "faker": "^6.6.6",
+    "framer-motion": "^10.12.16",
     "moment": "^2.29.4",
     "next": "13.4.4",
     "postcss": "8.4.24",

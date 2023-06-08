@@ -21,7 +21,7 @@ export function ChartAllDistFuel({ handleOpen }: ChartAllDistFuelProps) {
   const chartData = getChartData(allVehiclesData)
 
   return (
-    <div className='w-[500px] h-[400px] relative'>
+    <div className='w-[500px] h-[400px] relative bg-red-600'>
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
           width={500}
@@ -38,14 +38,13 @@ export function ChartAllDistFuel({ handleOpen }: ChartAllDistFuelProps) {
           <XAxis dataKey="name" />
           <YAxis />
           <Tooltip />
-          <Legend />
+          {/* <Legend /> */}
           <Bar dataKey="totalDistance" fill="#8884d8" />
           <Bar dataKey="totalTraveled" fill="red" />
           <Bar dataKey="totalFuelUsed" fill="#82ca9d" />
           <Bar dataKey="totalFueled" fill="#82ca9d" />
         </BarChart>
       </ResponsiveContainer>
-      <FullscreenIcon className='absolute right-5 top-5 hover:bg-slate-500' onClick={handleOpen} />
     </div>
   )
 }
