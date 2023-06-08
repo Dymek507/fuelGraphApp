@@ -2,24 +2,23 @@
 import React, { PureComponent } from 'react';
 import { LineChart as LineC, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { VehicleObj } from '@/types/global';
+import { formatArrayDate } from '@/app/utils/formatArrayDate';
 
-
-// array of months in polish
-const months = ['Sty', 'Lut', 'Mar', 'Kwi', 'Maj', 'Cze', 'Lip', 'Sie', 'Wrz', 'Paz', 'Lis', 'Gru']
-
-type LineChartProps = {
-  data: VehicleObj[],
+type ChartProps = {
+  data: any[],
   options: { dataKey: string, fill: string }[],
-  dataKey: string
+  dataKey: string,
+  mini?: boolean
 }
 
-export function LineChart({ data, options, dataKey }: LineChartProps) {
+export function LineChart({ data, options, dataKey, mini = false }: ChartProps) {
+  const chartData = formatArrayDate(data)
   return (
     <ResponsiveContainer width="100%" height="100%">
       <LineC
         width={500}
         height={300}
-        data={data}
+        data={chartData}
         margin={{
           top: 5,
           right: 30,
@@ -29,9 +28,11 @@ export function LineChart({ data, options, dataKey }: LineChartProps) {
       >
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey={dataKey} />
-        <YAxis />
-        <Tooltip />
-        <Legend />
+        {!mini && <>
+          <YAxis />
+          <Tooltip />
+          <Legend />
+        </>}
         {options.map((option, index) => {
           return <Line key={index} dataKey={option.dataKey} fill={option.fill} />
         })

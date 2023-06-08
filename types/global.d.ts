@@ -7,9 +7,9 @@ export type VehicleObj = {
   startDriving: string;
   mileage: number | null;
   endDriving: string;
-  avgExcel: number;
+  avgExcel: number | null;
   avgBox: number | null;
-  fuelBefore: number;
+  fuelBefore: number | null;
   fuelingTime: string | null;
   fuelingMileage: number | null;
   place: string | null;
