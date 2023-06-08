@@ -5,7 +5,11 @@ export type VehicleObj = {
   traveled: number;
   fuelUsed: number;
   startDriving: string;
-  mileage: number;
+  mileage: number | null;
+  endDriving: string;
+  avgExcel: number;
+  avgBox: number | null;
+  fuelBefore: number;
   fuelingTime: string | null;
   fuelingMileage: number | null;
   place: string | null;
@@ -16,3 +20,8 @@ export type VehicleObj = {
 };
 
 export type AllVehiclesData = { [key: string]: VehicleObj[] };
+
+export type ChartOption = {
+  dataKey: string;
+  fill: string;
+};

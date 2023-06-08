@@ -1,13 +1,12 @@
 import React from "react";
 import TopCards from "@/components/TopCards";
-import { VehicleAvgFuel } from "./helpers/VehicleAvgFuel";
+import { ChartAllAverage } from "./helpers/ChartAllAverage/ChartAllAverage";
 
 
 const Home = () => {
   return (
     <div className="flex-center flex-col h-[500px]">
-      <TopCards />
-      <VehicleAvgFuel />
+      <ChartAllAverage />
     </div>
   )
 };

@@ -37,9 +37,18 @@ const TopCards = () => {
       return acc
     }
   }, 0).toFixed(0))
-  const totalKm = vehicleArray[vehicleArray.length - 1].mileage - vehicleArray[0].mileage
+  //Find index of last full and first full tank
+  const firstFullTankIndex = vehicleArray.findIndex(item => item.fueling === true)
+  const lastFullTankIndex = vehicleArray.reverse().findIndex(item => item.fueling === true)
 
-  const averageFuel = (totalFuel / totalKm * 100).toFixed(2)
+  const startMileage = vehicleArray[firstFullTankIndex].fuelingMileage || vehicleArray[firstFullTankIndex].mileage || 0
+
+  const endMileage = vehicleArray[vehicleArray.length - lastFullTankIndex].fuelingMileage || vehicleArray[vehicleArray.length - lastFullTankIndex].mileage || 0
+
+  console.log(startMileage, endMileage)
+  const totalKm = endMileage - startMileage
+
+  const averageFuel = (totalFuel / totalKm).toFixed(2)
 
   return (
     <div className='grid gap-4 p-4 lg:grid-cols-5'>

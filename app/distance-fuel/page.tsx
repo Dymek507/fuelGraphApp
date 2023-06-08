@@ -1,12 +1,14 @@
 import React from "react";
-import { DistanceChart } from "./helpers/DistanceChart";
 import TopCards from "@/components/TopCards";
+import { ChartAllAverage } from "./helpers/ChartAllAverage/ChartAllAverage";
 
 
 const page = () => {
-  return <div className="flex-center">
-    <DistanceChart />
-  </div>;
+  return (
+    <div className="flex-center flex-col h-[500px]">
+      <ChartAllAverage />
+    </div>
+  )
 };
 
 export default page;

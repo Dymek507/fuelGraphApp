@@ -7,10 +7,6 @@ import ALL_VEHICLES_DATA from '@/data/fuel-data.json';
 import { useAppSelector } from '@/app/store/features/hooks';
 import { AllVehiclesData, VehicleObj } from '@/types/global';
 
-
-// array of months in polish
-const months = ['Sty', 'Lut', 'Mar', 'Kwi', 'Maj', 'Cze', 'Lip', 'Sie', 'Wrz', 'Paz', 'Lis', 'Gru']
-
 export function ChartAllAverage() {
 
   const plates = useAppSelector((state) => state.vehicle.plates);
@@ -36,13 +32,8 @@ export function ChartAllAverage() {
         <XAxis dataKey="name" />
         <YAxis />
         <Tooltip />
-        {/*<Legend /> */}
-        <Bar dataKey="totalFuelUsed" fill="#8884d8" />
-        <Bar dataKey="totalFueled" fill="red" />
-        <Bar dataKey="totalTraveled" fill="#82ca9d" />
-        <Bar dataKey="totalMileage" fill="#82ca9d" />
-        <Bar dataKey="avgFuelUsage" fill="#82ca9d" />
-        <Bar dataKey="avgTotalFueled" fill="#82ca9d" />
+        {/* <Bar dataKey="avgFuelUsage" fill="#82ca9d" /> */}
+        <Bar dataKey="avgTotalFueled" fill="royalblue" />
       </BarChart>
     </ResponsiveContainer>
   )

@@ -8,11 +8,8 @@ import ALL_VEHICLES_DATA from '@/data/fuel-data.json';
 import { useAppSelector } from '@/app/store/features/hooks';
 import { AllVehiclesData, VehicleObj } from '@/types/global';
 
-type ChartAllDistFuelProps = {
-  handleOpen: () => void
-}
 
-export function ChartAllDistFuel({ handleOpen }: ChartAllDistFuelProps) {
+export function ChartAllDistFuel() {
 
   const plates = useAppSelector((state) => state.vehicle.plates);
 

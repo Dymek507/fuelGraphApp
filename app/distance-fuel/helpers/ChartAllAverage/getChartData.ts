@@ -1,5 +1,4 @@
 import { AllVehiclesData, VehicleObj } from "@/types/global";
-import { fi } from "@faker-js/faker";
 
 //Get first and last full day
 const getFullDay = (data: VehicleObj[], first: boolean = true) => {
